@@ -10,6 +10,13 @@ export default defineConfig({
       logo: {
         src: "./public/favicon.svg",
       },
+      locales: {
+        root: {
+          label: "日本語",
+          lang: "ja",
+        },
+      },
+      defaultLocale: "root",
       social: [
         {
           icon: "discord",
