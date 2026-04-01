@@ -1,40 +1,42 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: Cube Bot へようこそ
+description: Cube Bot の公式ドキュメントです。コマンドの使い方や AI モデレーション機能について説明しています。
+template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: あなたの Discord サーバーを次のレベルへ。多機能・高性能な日本語対応 Discord Bot。
   image:
     file: ../../assets/houston.webp
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: コマンド一覧を見る
+      link: /commands/general/ping
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid } from "@astrojs/starlight/components";
 
-## Next steps
+## Cube Bot の機能
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+  <Card title="モデレーション" icon="approve-check-circle">
+    ban / kick / timeout / role / lock
+    など、サーバー管理に必要なすべてのコマンドを搭載しています。
+  </Card>
+  <Card title="自動化機能" icon="setting">
+    オートパージ・オートリアクション・スティッキーメッセージで、チャンネル管理を自動化できます。
+  </Card>
+  <Card title="翻訳機能" icon="translate">
+    DeepL API
+    を使ったメッセージ翻訳。コンテキストメニューからワンクリックで日本語翻訳ができます。
+  </Card>
+  <Card title="AI モデレーション" icon="rocket">
+    AI
+    を活用したスパム検知・有害コンテンツのフィルタリング。段階的なワークフローによる高精度な自動モデレーション。
+  </Card>
+  <Card title="グローバルチャット" icon="comment">
+    異なるサーバー間でチャットを共有できるグローバルチャット機能をサポートしています。
+  </Card>
+  <Card title="多言語対応" icon="information">
+    日本語・英語に対応。サーバーごとに言語を切り替えられます。
+  </Card>
 </CardGrid>

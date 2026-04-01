@@ -1,0 +1,252 @@
+/* Cube Bot カスタムテーマ */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;700&display=swap");
+
+/* Dark mode colors. */
+:root {
+  --sl-color-accent-low: #131e4f;
+  --sl-color-accent: #3447ff;
+  --sl-color-accent-high: #b3c7ff;
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #eceef2;
+  --sl-color-gray-2: #c0c2c7;
+  --sl-color-gray-3: #888b96;
+  --sl-color-gray-4: #545861;
+  --sl-color-gray-5: #353841;
+  --sl-color-gray-6: #24272f;
+  --sl-color-black: #17181c;
+}
+/* Dark mode colors. */
+:root {
+  --sl-color-accent-low: #131e4f;
+  --sl-color-accent: #3447ff;
+  --sl-color-accent-high: #b3c7ff;
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #eceef2;
+  --sl-color-gray-2: #c0c2c7;
+  --sl-color-gray-3: #888b96;
+  --sl-color-gray-4: #545861;
+  --sl-color-gray-5: #353841;
+  --sl-color-gray-6: #24272f;
+  --sl-color-black: #17181c;
+}
+:root[theme="light"] {
+  --sl-color-accent-low: #131e4f;
+  --sl-color-accent: #3447ff;
+  --sl-color-accent-high: #b3c7ff;
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #eceef2;
+  --sl-color-gray-2: #c0c2c7;
+  --sl-color-gray-3: #888b96;
+  --sl-color-gray-4: #545861;
+  --sl-color-gray-5: #353841;
+  --sl-color-gray-6: #24272f;
+  --sl-color-black: #17181c;
+}
+
+.content-panel:where(.astro-egyztusu) {
+  padding: 0 !important;
+}
+
+/* ブランドグラデーションヘッダー */
+header.header {
+  background: linear-gradient(135deg, #0e0d1f 0%, #1a1040 50%, #0e0d1f 100%);
+  border-bottom: 1px solid #2e2b4a;
+  backdrop-filter: blur(8px);
+}
+
+.sl-link-button {
+  background-color: #7c3aed !important;
+  border-color: #7c3aed !important;
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4) !important;
+  transition: all 0.2s ease-in-out;
+  padding: 0.5rem 1rem;
+}
+
+.sl-link-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.6) !important;
+}
+
+/* ロゴテキスト */
+.site-title {
+  font-weight: 700;
+  background: linear-gradient(135deg, #c4b5fd, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* サイドバー */
+.sidebar-pane {
+  background: #120f24;
+  border-right: 1px solid #2e2b4a;
+}
+
+/* コードブロック */
+pre {
+  background: #0a0918 !important;
+  border: 1px solid #2e2b4a !important;
+  border-radius: 8px !important;
+}
+
+code:not(pre code) {
+  background: rgba(124, 58, 237, 0.15) !important;
+  color: #c4b5fd !important;
+  border: 1px solid rgba(124, 58, 237, 0.3) !important;
+  border-radius: 4px !important;
+  padding: 0.1em 0.4em !important;
+}
+
+/* バッジ */
+.badge {
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+/* カード */
+.card {
+  background: rgba(30, 27, 60, 0.8) !important;
+  border: 1px solid #2e2b4a !important;
+  border-radius: 10px !important;
+  transition:
+    border-color 0.2s,
+    scale 0.2s,
+    translate 0.2s,
+    box-shadow 0.2s;
+}
+.card:hover {
+  border-color: #7c3aed !important;
+  scale: 1.02;
+  translate: 0 -4px;
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.2) !important;
+}
+@media (min-width: 50rem) {
+  .stagger:where(.astro-tj3zy6rz) {
+    padding: 0 !important;
+    --stagger-height: 0 !important;
+  }
+}
+.card:where(.astro-2jk6skdr) .icon:where(.astro-2jk6skdr) {
+  background-color: var(--sl-color-accent-low) !important;
+}
+
+/* テーブル */
+table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border: 1px solid #2e2b4a !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+th {
+  background: rgba(124, 58, 237, 0.2) !important;
+  color: #c4b5fd !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em;
+}
+
+td,
+th {
+  border-bottom: 1px solid #2e2b4a !important;
+  padding: 12px 16px !important;
+}
+
+tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* 見出し */
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  background: linear-gradient(135deg, #e2e0f0, #c4b5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ヒーローセクション */
+.hero {
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(124, 58, 237, 0.15) 0%,
+    transparent 70%
+  );
+}
+
+.hero h1 span {
+  font-size: 2.5rem !important;
+}
+
+/* アクションボタン */
+.action.primary {
+  background: linear-gradient(135deg, #7c3aed, #5b21b6) !important;
+  border: none !important;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4) !important;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
+}
+.action.primary:hover {
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.6) !important;
+  transform: translateY(-1px);
+}
+
+/* Aside (注意書き) */
+.starlight-aside {
+  border-radius: 8px !important;
+  border-left-width: 4px !important;
+}
+
+/* スクロールバー */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #120f24;
+}
+::-webkit-scrollbar-thumb {
+  background: #2e2b4a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+}
+
+/* アニメーション */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-panel {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* ナビリンク */
+nav a[aria-current="page"] {
+  background: rgba(124, 58, 237, 0.2) !important;
+  border-left: 3px solid #7c3aed;
+  color: #c4b5fd !important;
+}
+
+/* フッター */
+footer {
+  border-top: 1px solid #2e2b4a;
+  color: #7c7a94;
+}
