@@ -1,252 +1,234 @@
-/* Cube Bot カスタムテーマ */
+/* Cube Bot プレミアムテーマ */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;700&display=swap");
 
-/* Dark mode colors. */
+/* 基本設定 */
 :root {
-  --sl-color-accent-low: #131e4f;
-  --sl-color-accent: #3447ff;
-  --sl-color-accent-high: #b3c7ff;
-  --sl-color-white: #ffffff;
-  --sl-color-gray-1: #eceef2;
-  --sl-color-gray-2: #c0c2c7;
-  --sl-color-gray-3: #888b96;
-  --sl-color-gray-4: #545861;
-  --sl-color-gray-5: #353841;
-  --sl-color-gray-6: #24272f;
-  --sl-color-black: #17181c;
-}
-/* Dark mode colors. */
-:root {
-  --sl-color-accent-low: #131e4f;
-  --sl-color-accent: #3447ff;
-  --sl-color-accent-high: #b3c7ff;
-  --sl-color-white: #ffffff;
-  --sl-color-gray-1: #eceef2;
-  --sl-color-gray-2: #c0c2c7;
-  --sl-color-gray-3: #888b96;
-  --sl-color-gray-4: #545861;
-  --sl-color-gray-5: #353841;
-  --sl-color-gray-6: #24272f;
-  --sl-color-black: #17181c;
-}
-:root[theme="light"] {
-  --sl-color-accent-low: #131e4f;
-  --sl-color-accent: #3447ff;
-  --sl-color-accent-high: #b3c7ff;
-  --sl-color-white: #ffffff;
-  --sl-color-gray-1: #eceef2;
-  --sl-color-gray-2: #c0c2c7;
-  --sl-color-gray-3: #888b96;
-  --sl-color-gray-4: #545861;
-  --sl-color-gray-5: #353841;
-  --sl-color-gray-6: #24272f;
-  --sl-color-black: #17181c;
+  --sl-hue-accent: 196; /* スカイブルー系のアクセント色相 */
+  --sl-font-body: "Inter", "Noto Sans JP", sans-serif;
+  --sl-font-mono: "Courier New", Courier, monospace;
+  
+  /* 角丸の強化 (全体的に柔らかい印象へ) */
+  --sl-border-radius-small: 8px;
+  --sl-border-radius-medium: 12px;
+  --sl-border-radius-large: 16px;
 }
 
-.content-panel:where(.astro-egyztusu) {
-  padding: 0 !important;
+/* ダークモード */
+:root[data-theme="dark"] {
+  --sl-color-accent: #3bc8fb;
+  --sl-color-accent-low: rgba(59, 200, 251, 0.1);
+  --sl-color-accent-high: #e0f7ff;
+  
+  /* 文字色を白に統一 */
+  --sl-color-text: #ffffff;
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #ffffff;
+  --sl-color-gray-2: #eeeeee;
+  --sl-color-gray-3: #dddddd;
 }
 
-/* ブランドグラデーションヘッダー */
+/* ライトモード */
+:root[data-theme="light"] {
+  --sl-color-accent: #3bc8fb;
+  --sl-color-accent-low: rgba(59, 200, 251, 0.08);
+  --sl-color-accent-high: #005a7a;
+  
+  /* 文字色を少し柔らかい黒 (深灰) に、背景色を白に設定 */
+  --sl-color-text: #17181c;
+  --sl-color-black: #ffffff;
+  --sl-color-white: #17181c;
+  --sl-color-gray-1: #17181c;
+  --sl-color-gray-2: #24272f;
+  --sl-color-gray-3: #4b4e58;
+  --sl-color-gray-4: #8b8e98;
+  --sl-color-gray-5: #e1e4e8;
+  --sl-color-gray-6: #f6f8fa;
+  --sl-color-bg: #ffffff;
+}
+
+/* ヘッダー */
 header.header {
-  background: linear-gradient(135deg, #0e0d1f 0%, #1a1040 50%, #0e0d1f 100%);
-  border-bottom: 1px solid #2e2b4a;
-  backdrop-filter: blur(8px);
+  background-color: var(--sl-color-bg-nav) !important;
+  border-bottom: 1px solid var(--sl-color-hairline) !important;
 }
 
-.sl-link-button {
-  background-color: #7c3aed !important;
-  border-color: #7c3aed !important;
-  color: #fff !important;
-  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4) !important;
-  transition: all 0.2s ease-in-out;
-  padding: 0.5rem 1rem;
-}
-
-.sl-link-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.6) !important;
-}
-
-/* ロゴテキスト */
+/* ロゴテキスト (アクセントカラーを維持) */
 .site-title {
   font-weight: 700;
-  background: linear-gradient(135deg, #c4b5fd, #7c3aed);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--sl-color-accent) !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
+  background: none !important;
 }
 
 /* サイドバー */
 .sidebar-pane {
-  background: #120f24;
-  border-right: 1px solid #2e2b4a;
-}
-
-/* コードブロック */
-pre {
-  background: #0a0918 !important;
-  border: 1px solid #2e2b4a !important;
-  border-radius: 8px !important;
-}
-
-code:not(pre code) {
-  background: rgba(124, 58, 237, 0.15) !important;
-  color: #c4b5fd !important;
-  border: 1px solid rgba(124, 58, 237, 0.3) !important;
-  border-radius: 4px !important;
-  padding: 0.1em 0.4em !important;
-}
-
-/* バッジ */
-.badge {
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.75rem;
+  background-color: var(--sl-color-bg-nav) !important;
+  border-right: 1px solid var(--sl-color-hairline) !important;
 }
 
 /* カード */
 .card {
-  background: rgba(30, 27, 60, 0.8) !important;
-  border: 1px solid #2e2b4a !important;
-  border-radius: 10px !important;
-  transition:
-    border-color 0.2s,
-    scale 0.2s,
-    translate 0.2s,
-    box-shadow 0.2s;
+  background-color: var(--sl-color-bg-elevated) !important;
+  border: 1px solid rgba(59, 200, 251, 0.3) !important;
+  border-radius: var(--sl-border-radius-large) !important;
+  box-shadow: none !important;
+  transition: all 0.4s ease;
 }
 .card:hover {
-  border-color: #7c3aed !important;
-  scale: 1.02;
-  translate: 0 -4px;
-  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.2) !important;
+  transform: translateY(-2px);
+  border-color: var(--sl-color-accent) !important;
+  background-color: rgba(59, 200, 251, 0.04) !important;
 }
+
 @media (min-width: 50rem) {
   .stagger:where(.astro-tj3zy6rz) {
-    padding: 0 !important;
-    --stagger-height: 0 !important;
+    --stagger-height: 0;
+    padding-bottom: var(--stagger-height);
   }
-}
-.card:where(.astro-2jk6skdr) .icon:where(.astro-2jk6skdr) {
-  background-color: var(--sl-color-accent-low) !important;
 }
 
 /* テーブル */
 table {
+  width: 100%;
   border-collapse: separate !important;
   border-spacing: 0 !important;
-  border: 1px solid #2e2b4a !important;
-  border-radius: 8px !important;
+  border: 1px solid var(--sl-color-hairline) !important;
+  border-radius: var(--sl-border-radius-medium) !important;
   overflow: hidden !important;
+  margin: 1rem 0;
 }
 
 th {
-  background: rgba(124, 58, 237, 0.2) !important;
-  color: #c4b5fd !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.05em;
+  background-color: var(--sl-color-bg-elevated) !important;
+  color: var(--sl-color-text) !important;
+  font-weight: 700 !important;
 }
 
-td,
-th {
-  border-bottom: 1px solid #2e2b4a !important;
-  padding: 12px 16px !important;
+td, th {
+  border-bottom: 1px solid var(--sl-color-hairline) !important;
+  border-right: 1px solid var(--sl-color-hairline) !important;
+  padding: 0.75rem 1rem !important;
+}
+
+td:last-child, th:last-child {
+  border-right: none !important;
 }
 
 tr:last-child td {
   border-bottom: none !important;
 }
 
-/* 見出し */
-h1,
-h2,
-h3 {
-  font-weight: 700;
-  letter-spacing: -0.02em;
+/* コードブロック (角を丸く) */
+pre {
+  border: 1px solid var(--sl-color-hairline) !important;
+  border-radius: var(--sl-border-radius-medium) !important;
 }
 
-h1 {
-  background: linear-gradient(135deg, #e2e0f0, #c4b5fd);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+code:not(pre code) {
+  background-color: var(--sl-color-accent-low) !important;
+  border: 1px solid rgba(59, 200, 251, 0.2) !important;
+  color: var(--sl-color-accent-high) !important;
+  border-radius: var(--sl-border-radius-small) !important;
+  padding: 0.15em 0.4em !important;
 }
 
-/* ヒーローセクション */
-.hero {
-  background: radial-gradient(
-    ellipse at 50% 0%,
-    rgba(124, 58, 237, 0.15) 0%,
-    transparent 70%
-  );
-}
-
-.hero h1 span {
-  font-size: 2.5rem !important;
-}
-
-/* アクションボタン */
+/* アクションボタン (単色・カプセル型) */
 .action.primary {
-  background: linear-gradient(135deg, #7c3aed, #5b21b6) !important;
+  background-color: var(--sl-color-accent) !important;
+  color: white !important;
   border: none !important;
-  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4) !important;
-  transition:
-    box-shadow 0.2s,
-    transform 0.2s;
+  border-radius: 30px !important;
+  font-weight: 600 !important;
 }
+
 .action.primary:hover {
-  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.6) !important;
+  filter: brightness(1.1);
   transform: translateY(-1px);
 }
 
-/* Aside (注意書き) */
-.starlight-aside {
-  border-radius: 8px !important;
-  border-left-width: 4px !important;
+/* サイドバーのカレントリンク (角を丸く) */
+nav a[aria-current="page"] {
+  background-color: var(--sl-color-accent-low) !important;
+  color: var(--sl-color-accent-high) !important;
+  border-left: 4px solid var(--sl-color-accent) !important;
 }
 
-/* スクロールバー */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #120f24;
-}
-::-webkit-scrollbar-thumb {
-  background: #2e2b4a;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #7c3aed;
+/* 全体の簡素化 (見出しの色を調整) */
+h1 {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
+  color: var(--sl-color-text) !important;
 }
 
-/* アニメーション */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+h2, h3, h4, h5 {
+  color: var(--sl-color-text) !important;
 }
 
 .content-panel {
-  animation: fadeInUp 0.3s ease-out;
+  animation: none !important;
 }
 
-/* ナビリンク */
-nav a[aria-current="page"] {
-  background: rgba(124, 58, 237, 0.2) !important;
-  border-left: 3px solid #7c3aed;
-  color: #c4b5fd !important;
+::-webkit-scrollbar-thumb {
+  background: var(--sl-color-gray-5);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sl-color-accent);
 }
 
-/* フッター */
-footer {
-  border-top: 1px solid #2e2b4a;
-  color: #7c7a94;
+/* Aside (注釈) の角丸強化 */
+.starlight-aside {
+  border-radius: var(--sl-border-radius-medium) !important;
+}
+
+/* 順序付きリスト (ol) をステップ表示風に自動装飾 */
+.content ol {
+  list-style: none !important;
+  counter-reset: custom-step-counter;
+  padding-left: 2rem !important;
+  position: relative;
+}
+
+.content ol > li {
+  counter-increment: custom-step-counter;
+  position: relative;
+  padding-bottom: 1.5rem;
+  padding-left: 0.5rem;
+}
+
+.content ol > li::before {
+  content: counter(custom-step-counter);
+  position: absolute;
+  left: -2.25rem;
+  top: 0.1rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: var(--sl-color-accent);
+  color: white !important;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  z-index: 1;
+}
+
+/* ステップをつなぐ縦線 */
+.content ol > li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: -1.5rem;
+  top: 1.7rem;
+  width: 2px;
+  height: calc(100% - 1.2rem);
+  background-color: var(--sl-color-accent-low);
+}
+
+:root[data-theme="light"] .content ol > li::before {
+  color: white !important;
 }
