@@ -1,0 +1,101 @@
+---
+title: 導入チュートリアル
+description: Cube Bot をサーバーに招待して、基本的な機能を使い始めるまでの手順を解説します。
+---
+
+import { Aside, Steps, Card, CardGrid } from "@astrojs/starlight/components";
+
+このページでは、Cube Bot をサーバーに追加して使い始めるまでの流れを説明します。
+
+---
+
+## Step 1: Cube Bot をサーバーに招待する
+
+下のボタンから招待ページを開き、Bot を追加したいサーバーを選択してください。
+
+**[→ Cube Bot を招待する](https://discord.com/oauth2/authorize?client_id=1412493456021917757)**
+
+<Aside type="caution">
+
+Bot の招待には、そのサーバーの **サーバー管理者** 権限が必要です。
+
+</Aside>
+
+招待時に権限の確認画面が表示されます。Cube Bot はモデレーション・ロール管理・チャンネル管理などの機能を提供するため、それらに対応した権限が必要です。**「認証」ボタンを押してすべての権限を許可してください。**
+
+---
+
+## Step 2: Bot が動いているか確認する
+
+招待が完了したら、任意のチャンネルで以下のコマンドを実行してみましょう。
+
+```
+/ping
+```
+
+Bot の応答速度やステータスが表示されれば、正常に動作しています 🎉
+
+---
+
+## Step 3: 言語を設定する（任意）
+
+Cube Bot は日本語と英語に対応しています。デフォルトは日本語ですが、変更したい場合は以下のコマンドを実行してください。
+
+```
+/settings language lang:日本語 (Japanese)
+```
+
+<Aside type="note">
+
+この設定には **サーバー管理** 権限が必要です。
+
+</Aside>
+
+---
+
+## Step 4: よく使う機能を試してみる
+
+Cube Bot の代表的な機能を紹介します。
+
+<CardGrid>
+  <Card title="メンバーをBAN・キックする" icon="approve-check-circle">
+    問題のあるメンバーをサーバーから退場させます。
+
+    `/ban user:@ユーザー名 reason:スパム行為`
+
+    `/kick user:@ユーザー名`
+
+    → [詳しくはモデレーションのページへ](/commands/moderation)
+  </Card>
+  <Card title="ロールを付与・削除する" icon="puzzle">
+    メンバーに特定のロールを付与したり、取り外したりできます。
+
+    `/role give member:@ユーザー名 role:@ロール名`
+
+    → [詳しくはロール管理のページへ](/commands/role)
+  </Card>
+  <Card title="古いメッセージを定期削除する" icon="rocket">
+    チャンネルのメッセージを指定した件数・間隔で自動的に削除します。
+
+    `/auto_purge set limit:100 interval:1h`
+
+    → [詳しくは自動化機能のページへ](/commands/automation)
+  </Card>
+  <Card title="メッセージを翻訳する" icon="translate">
+    メッセージを右クリック（長押し）→「アプリ」→「Translate」で、サーバー設定の言語に翻訳できます。
+
+    → [詳しくはコンテキストメニューのページへ](/contexts)
+  </Card>
+</CardGrid>
+
+---
+
+## 次のステップ
+
+引き続き、各機能の詳細ドキュメントをご確認ください。
+
+- [モデレーション](/commands/moderation) — BAN・キック・タイムアウト・ロック・スローモードなど
+- [ロール管理](/commands/role) — ロールの付与・削除・一括操作・ロールキーパー
+- [VC 移動](/commands/move) — ボイスチャンネル間のメンバー移動
+- [自動化機能](/commands/automation) — 自動削除・自動リアクション・スティッキーメッセージ
+- [サーバー設定](/commands/settings) — 翻訳設定・グローバルチャット・言語設定

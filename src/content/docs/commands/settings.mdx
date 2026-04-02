@@ -1,52 +1,145 @@
 ---
-title: サーバー設定コマンド
-description: Cube Bot の高度な設定（ロールキーパー、多言語、グローバルチャットなど）を説明します。
+title: サーバー設定
+description: Cube Bot の動作をサーバーに合わせてカスタマイズするための設定コマンドを解説します。
 ---
 
-import { Aside, Steps, Table } from "@astrojs/starlight/components";
+import { Aside } from "@astrojs/starlight/components";
 
-Cube Bot の動作をサーバーに合わせてカスタマイズするための設定コマンドです。
+---
 
-## ロール管理 (高度設定)
+## 言語設定
 
-### role_keeper
-メンバーがサーバーを抜けて再参加した際に、以前持っていたロールを自動的に復元する機能です。
+### /settings language — Bot の言語を変更する
 
-1. ロールキーパーの設定を行うチャンネルでコマンドを入力します。
-2. `enabled` オプションでロールキーパーを有効にします。
-3. `manage_permissions` や `moderation_permissions` で、特定のロールを復元対象から除外するか設定します。
+Cube Bot がサーバーに送信するメッセージ（応答や通知など）の言語を変更します。
 
-<Aside type="note">
-  ロールキーパー機能によって復元されるのは、Bot がそのサーバーに参加していた間のロール履歴に基づきます。
+| オプション | 必須 | 説明 |
+|---|---|---|
+| `lang` | ✅ | 言語コード（`日本語 (Japanese)` または `English`） |
+
+**実行例**
+```
+/settings language lang:日本語 (Japanese)
+```
+
+<Aside type="caution">
+
+必要な権限: **サーバーを管理する**
+
 </Aside>
 
-## 翻訳機能
+---
 
-### auto_translate
-特定のチャンネルでの発言を自動的に指定された言語に翻訳します。
+## 自動翻訳
 
-| 言語コード | 対象言語 |
-| :--- | :--- |
+### /settings auto_translate — チャンネルの自動翻訳を設定する
+
+指定したチャンネルに投稿されたメッセージを、自動的に指定した言語に翻訳して表示します。
+
+| オプション | 必須 | 説明 |
+|---|---|---|
+| `enabled` | ✅ | 自動翻訳を有効にするか（`true` / `false`） |
+| `target_lang` | ✅ | 翻訳先の言語コード（例: `JA`, `EN`, `FR`） |
+| `channel` | — | 設定するチャンネル（省略時は実行したチャンネル） |
+
+**主な言語コード**
+
+| コード | 言語 |
+|---|---|
 | `JA` | 日本語 |
 | `EN` | 英語 |
 | `FR` | フランス語 |
 | `DE` | ドイツ語 |
 | `ES` | スペイン語 |
+| `KO` | 韓国語 |
+| `ZH` | 中国語 |
 
-<Aside type="caution">
-  自動翻訳を有効にすると、そのチャンネルの全メッセージが翻訳され、メッセージの下に翻訳結果が表示されます。
-</Aside>
-
-## 言語設定
-
-### language
-サーバー内での Cube Bot の言語設定を変更します。
-
-| 言語コード | 対象言語 |
-| :--- | :--- |
-| `ja` | 日本語 (デフォルト) |
-| `en` | 英語 |
+**実行例**
+```
+/settings auto_translate enabled:true target_lang:JA
+/settings auto_translate enabled:false target_lang:JA channel:#english-chat
+```
 
 <Aside type="note">
-  サーバーのデフォルト言語によって、Bot の応答メッセージ（成功・失敗・エラーメッセージなど）が切り替わります。
+
+自動翻訳はチャンネルトピックを書き換えて機能します。無効化すると、チャンネルトピックがリセットされます。
+
+</Aside>
+
+<Aside type="caution">
+
+必要な権限: **チャンネルを管理する**
+
+</Aside>
+
+---
+
+## ロールキーパー
+
+メンバーがサーバーを退出して再参加した際に、以前持っていたロールを自動的に復元する機能です。
+
+### /settings role_keeper — ロールキーパーを設定する
+
+| オプション | 必須 | 説明 |
+|---|---|---|
+| `enabled` | ✅ | ロールキーパーを有効にするか（`true` / `false`） |
+| `manage_permissions` | — | サーバー管理・ロール管理・チャンネル管理などの権限を持つロールを復元対象から除外するか（デフォルト: `true`） |
+| `moderation_permissions` | — | BAN・キック・タイムアウトなどの権限を持つロールを復元対象から除外するか（デフォルト: `true`） |
+
+**実行例**
+```
+/settings role_keeper enabled:true
+/settings role_keeper enabled:true manage_permissions:true moderation_permissions:true
+```
+
+<Aside type="note">
+
+`manage_permissions` と `moderation_permissions` を `true`（デフォルト）にすることで、権限を持つロールが不正に復元されるリスクを防ぎます。一般メンバーの自由なロール（色ロール・自己紹介ロールなど）は変わらず復元されます。
+
+</Aside>
+
+<Aside type="caution">
+
+必要な権限: **ロールを管理する** + **サーバーを管理する**
+
+</Aside>
+
+---
+
+## グローバルチャット
+
+Cube Bot が動作するサーバー同士をつなぐグローバルチャット機能です。他のサーバーのメンバーとリアルタイムで交流できます。
+
+### /settings global_connect — グローバルチャットに参加する
+
+実行したチャンネルをグローバルチャットに接続します。以降、このチャンネルへのメッセージは他の参加サーバーにも送信されます。
+
+**実行例**
+```
+/settings global_connect
+```
+
+<Aside type="caution">
+
+必要な権限: **サーバーを管理する**
+
+テキストチャンネルまたはニュースチャンネルでのみ実行できます。
+
+</Aside>
+
+---
+
+### /settings global_disconnect — グローバルチャットから退出する
+
+実行したチャンネルのグローバルチャット接続を解除します。
+
+**実行例**
+```
+/settings global_disconnect
+```
+
+<Aside type="caution">
+
+必要な権限: **サーバーを管理する**
+
 </Aside>

@@ -28,19 +28,25 @@ export default defineConfig({
       sidebar: [
         {
           label: "はじめに",
-          items: [{ label: "Cube Bot について", link: "/" }],
+          items: [
+            { label: "Cube Bot について", link: "/" },
+            { label: "導入チュートリアル", link: "/getting-started" },
+          ],
         },
         {
           label: "コマンド",
           items: [
-            { label: "全般コマンド", link: "/commands/general" },
-            { label: "サーバー管理", link: "/commands/manage" },
+            { label: "Bot 情報", link: "/commands/general" },
+            { label: "モデレーション", link: "/commands/moderation" },
+            { label: "ロール管理", link: "/commands/role" },
+            { label: "VC 移動", link: "/commands/move" },
+            { label: "自動化機能", link: "/commands/automation" },
             { label: "サーバー設定", link: "/commands/settings" },
           ],
         },
         {
-          label: "便利な機能",
-          items: [{ label: "コンテキストメニュー", link: "/contexts" }],
+          label: "コンテキストメニュー",
+          items: [{ label: "メッセージ操作", link: "/contexts" }],
         },
       ],
     }),

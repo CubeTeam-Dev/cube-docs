@@ -1,40 +1,34 @@
 ---
-title: Cube Bot へようこそ
-description: Cube Bot の公式ドキュメントです。コマンドの使い方や AI モデレーション機能について説明しています。
+title: Cube Bot について
+description: Discord サーバーの管理を強力にサポートする多機能 Bot「Cube Bot」の公式ドキュメントです。
 template: splash
 hero:
-  tagline: あなたの Discord サーバーを次のレベルへ。多機能・高性能な日本語対応 Discord Bot。
+  tagline: Discord サーバー管理を、もっとかんたんに。
   actions:
-    - text: コマンド一覧を見る
-      link: /commands/general
+    - text: 今すぐ招待する
+      link: https://discord.com/oauth2/authorize?client_id=1412493456021917757
       icon: right-arrow
-      variant: minimal
+      variant: primary
+    - text: 導入チュートリアル
+      link: /getting-started
+      icon: open-book
 ---
 
 import { Card, CardGrid } from "@astrojs/starlight/components";
 
-## Cube Bot の機能
+## Cube Bot でできること
 
 <CardGrid stagger>
   <Card title="モデレーション" icon="approve-check-circle">
-    ban / kick / timeout / role / lock
-    など、サーバー管理に必要なすべてのコマンドを搭載しています。
+    BAN・キック・タイムアウトからチャンネルのロックまで、サーバーの秩序を守るコマンドを完備しています。
   </Card>
-  <Card title="自動化機能" icon="setting">
-    オートパージ・オートリアクション・スティッキーメッセージで、チャンネル管理を自動化できます。
+  <Card title="ロール管理" icon="puzzle">
+    ロールの付与・削除はもちろん、サーバー全員への一括操作も可能。再参加時にロールを自動復元するロールキーパー機能も搭載。
   </Card>
-  <Card title="翻訳機能" icon="translate">
-    DeepL API
-    を使ったメッセージ翻訳。コンテキストメニューからワンクリックで日本語翻訳ができます。
+  <Card title="自動化機能" icon="rocket">
+    自動削除・自動リアクション・スティッキーメッセージで、チャンネルの管理を省力化できます。
   </Card>
-  <Card title="AI モデレーション" icon="rocket">
-    AI
-    を活用したスパム検知・有害コンテンツのフィルタリング。段階的なワークフローによる高精度な自動モデレーション。
-  </Card>
-  <Card title="グローバルチャット" icon="comment">
-    異なるサーバー間でチャットを共有できるグローバルチャット機能をサポートしています。
-  </Card>
-  <Card title="多言語対応" icon="information">
-    日本語・英語に対応。サーバーごとに言語を切り替えられます。
+  <Card title="翻訳・グローバルチャット" icon="translate">
+    メッセージの翻訳や、複数のサーバーをつなぐグローバルチャット機能で、言語の壁を超えたコミュニティ運営を支援します。
   </Card>
 </CardGrid>
