@@ -69,13 +69,45 @@ header.header {
 }
 
 /* カード */
+/* カード */
 .card {
+  position: relative !important;
+  display: block !important;
+  padding: 2rem !important;
+  padding-bottom: 4rem !important; /* リンク用のスペース */
   background-color: var(--sl-color-bg-elevated) !important;
   border: 1px solid rgba(59, 200, 251, 0.3) !important;
   border-radius: var(--sl-border-radius-large) !important;
   box-shadow: none !important;
   transition: all 0.4s ease;
+  min-height: 220px !important;
 }
+
+.card .body {
+  display: block !important;
+  margin: 0 !important;
+}
+
+.card p {
+  margin-bottom: 0 !important;
+}
+
+.card a {
+  position: absolute !important;
+  bottom: 1.5rem !important;
+  left: 1.5rem !important;
+  color: var(--sl-color-accent) !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+  transition: opacity 0.2s ease;
+}
+
+.card a:hover {
+  opacity: 0.8;
+  text-decoration: underline !important;
+}
+
 .card:hover {
   transform: translateY(-2px);
   border-color: var(--sl-color-accent) !important;
