@@ -7,7 +7,18 @@ import starlightBlog from "starlight-blog";
 export default defineConfig({
   integrations: [
     starlight({
-      plugins: [starlightBlog()],
+      plugins: [
+        starlightBlog({
+          authors: {
+            tah: {
+              name: "tah",
+              title: "Lead Engineer",
+              picture: "/icon/tah.png",
+              url: "https://cubeteam.app",
+            },
+          },
+        }),
+      ],
       title: "Cube Bot Docs",
       logo: {
         src: "./public/favicon.svg",
