@@ -61,6 +61,15 @@ export default defineConfig({
           label: "コンテキストメニュー",
           items: [{ label: "メッセージ操作", link: "/contexts" }],
         },
+        {
+          label: "モジュール",
+          items: [
+            {
+              label: "監査ログ",
+              link: "/modules/audit-log",
+            },
+          ],
+        },
       ],
     }),
   ],
