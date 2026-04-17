@@ -68,6 +68,10 @@ export default defineConfig({
               label: "監査ログ",
               link: "/modules/audit-log",
             },
+            {
+              label: "ワークフロー",
+              link: "/modules/workflow",
+            },
           ],
         },
       ],
