@@ -65,6 +65,26 @@ export default defineConfig({
           label: "モジュール",
           items: [
             {
+              label: "コアコンセプト",
+              link: "/modules/core-concepts",
+            },
+            {
+              label: "AutoMod",
+              link: "/modules/automod",
+            },
+            {
+              label: "AntiRaid",
+              link: "/modules/antiraid",
+            },
+            {
+              label: "AntiNuke",
+              link: "/modules/antinuke",
+            },
+            {
+              label: "JoinGate",
+              link: "/modules/joingate",
+            },
+            {
               label: "監査ログ",
               link: "/modules/audit-log",
             },
