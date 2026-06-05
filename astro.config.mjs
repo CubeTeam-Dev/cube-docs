@@ -65,12 +65,29 @@ export default defineConfig({
           label: "モジュール",
           items: [
             {
-              label: "コアコンセプト",
+              label: "監査ログ",
+              link: "/modules/audit-log",
+            },
+            {
+              label: "ワークフロー",
+              link: "/modules/workflow",
+            },
+          ],
+        },
+        {
+          label: "モデレーション",
+          items: [
+            {
+              label: "モデレーションの仕組み",
               link: "/modules/core-concepts",
             },
             {
               label: "AutoMod",
               link: "/modules/automod",
+            },
+            {
+              label: "AI モデレーション(レガシー版)",
+              link: "/modules/ai-moderation-legacy",
             },
             {
               label: "AntiRaid",
@@ -83,14 +100,6 @@ export default defineConfig({
             {
               label: "JoinGate",
               link: "/modules/joingate",
-            },
-            {
-              label: "監査ログ",
-              link: "/modules/audit-log",
-            },
-            {
-              label: "ワークフロー",
-              link: "/modules/workflow",
             },
           ],
         },
