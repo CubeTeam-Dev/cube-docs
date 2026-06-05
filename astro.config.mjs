@@ -78,16 +78,16 @@ export default defineConfig({
           label: "モデレーション",
           items: [
             {
+              label: "AI モデレーション(レガシー版)",
+              link: "/modules/ai-moderation-legacy",
+            },
+            {
               label: "モデレーションの仕組み",
               link: "/modules/core-concepts",
             },
             {
               label: "AutoMod",
               link: "/modules/automod",
-            },
-            {
-              label: "AI モデレーション(レガシー版)",
-              link: "/modules/ai-moderation-legacy",
             },
             {
               label: "AntiRaid",
