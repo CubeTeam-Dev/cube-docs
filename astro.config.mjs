@@ -78,6 +78,10 @@ export default defineConfig({
           label: "モデレーション",
           items: [
             {
+              label: "AI モデレーション",
+              link: "/modules/ai-moderation",
+            },
+            {
               label: "AI モデレーション(レガシー版)",
               link: "/modules/ai-moderation-legacy",
             },
